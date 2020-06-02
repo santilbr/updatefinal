@@ -1,0 +1,219 @@
+/* Tipografía */
+@font-face {
+  font-family: "quebec-regular";
+  src: url("/assets/fonts/quebec-regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "quebec-semibold";
+  src: url("/assets/fonts/quebec-semibold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "quebec-semibolditalic";
+  src: url("/assets/fonts/quebec-semibolditalic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 600;
+}
+
+/****************************************
+*    Variables
+*****************************************/
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --primary: #0366ee;
+  --link: #0000ee;
+  --hover: #551a8b;
+  --secondary: #fcb42a;
+  --font-family: "quebec-regular";
+  --font-family-semibold: "quebec-semibold";
+  --font-family-semibolditalic: "quebec-semibolditalic";
+}
+
+/****************************************
+*    Base - Elements
+*****************************************/
+html {
+  height: 100%;
+}
+
+body {
+  color: var(--black);
+  background: var(--white);
+  font-size: 100%;
+  font-size: calc(16px + (20 - 16) * ((100vw - 720px) / (1400 - 720)));
+  font-family: var(--font-family);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+  font-family: var(--font-family-semibolditalic);
+}
+
+a:active {
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/****************************************
+*    Components - Common
+*****************************************/
+/* Layout */
+.site-container.home-bg {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2322424/santi.png)
+    no-repeat right;
+  background-size: 350px;
+}
+
+.site-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  max-width: 90vw;
+  margin: 0 auto;
+  background: none;
+}
+
+.header {
+  padding-top: 1em;
+}
+
+.header h1,
+.link {
+  font-size: 2.5em;
+  text-transform: lowercase;
+  font-weight: normal;
+}
+
+.link.italica {
+  font-family: var(--font-family-semibolditalic);
+  font-style: italic;
+  font-weight: semibold;
+}
+
+.header a:hover {
+  opacity: 0.8;
+  font-family: inherit;
+  font-style: normal;
+}
+
+.menu-list {
+  margin-top: 1em;
+}
+
+.menu-list li {
+  font-family: var(--font-family-semibold);
+}
+
+.menu-list .current {
+  font-family: var(--font-family-semibolditalic);
+}
+
+.footer {
+  align-self: end;
+  padding-bottom: 1em;
+}
+
+.footer a {
+  display: block;
+  color: black;
+  font-size: 2.5em;
+}
+
+/* Desktop */
+@media screen and (min-width: 40em) {
+  .site-container.home-bg {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2322424/santi.png)
+      no-repeat right;
+    background-size: 500px;
+  }
+
+  .menu {
+    align-self: center;
+    height: 100%;
+    line-height: 1.4;
+  }
+
+  .footer a {
+    font-size: 2em;
+  }
+}
+
+/* Proyecto */
+.proyecto .menu ul {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.proyecto nav li:not(:first-child) {
+  display: none;
+}
+
+.proyecto {
+  background: none;
+}
+
+.proyecto img {
+  margin-top: 2em;
+}
+
+.proyecto {
+  position: relative;
+}
+
+/* Desktop */
+@media screen and (min-width: 40em) {
+  .proyecto {
+    max-width: 60vw;
+    margin: -20vh 0 0 auto;
+  }
+
+  .descripcion-proyecto {
+    max-width: 550px;
+    columns: 2;
+  }
+
+  .descripcion-proyecto p {
+    font-size: 15px;
+  }
+
+  .descripcion-proyecto p:last-of-type {
+    padding-top: 1em;
+  }
+}
+
+/****************************************
+*    Helpers
+*****************************************/
+.centrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ayuda visual temporal */
+.outline {
+  border: 2px dotted blue;
+}
+
+/* Notas */
+/* Crear un zip con tu nombre santiago-proyecto.zip y un notas.txt */
